@@ -81,6 +81,12 @@
     <!-- Shown in off-route scenarios to provide feedback -->
     <string name="mapbox_report_problem">Report Problem</string>
 
+    <!-- Route Alert Text -->
+    <!-- Route Alert Toll Texts -->
+    <string name="mapbox_route_alert_toll_gantry">Toll Gantry</string>
+    <string name="mapbox_route_alert_toll_booth">Toll Booth</string>
+    <string name="mapbox_route_alert_toll_general">Toll</string>
+
     <!-- Should not be translated -->
     <string name="mapbox_navigation_guidance_day"
             translatable="false">mapbox://styles/mapbox/navigation-day-v1</string>

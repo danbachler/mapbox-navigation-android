@@ -636,6 +636,57 @@ package com.mapbox.navigation.ui.route {
 
 }
 
+package com.mapbox.navigation.ui.routealert {
+
+  public final class MapboxRouteAlert {
+    ctor public MapboxRouteAlert(android.content.Context context, com.mapbox.mapboxsdk.maps.Style style, int options);
+    method public void onNewRouteAlerts(java.util.List<? extends com.mapbox.navigation.base.trip.model.alert.RouteAlert> routeAlerts);
+    field public static final com.mapbox.navigation.ui.routealert.MapboxRouteAlert.Companion! Companion;
+  }
+
+  public static final class MapboxRouteAlert.Companion {
+    method public com.mapbox.mapboxsdk.style.layers.PropertyValue<?>![] getMapboxRouteAlertLineLayerProperties(@ColorInt int color, float width);
+    method public com.mapbox.mapboxsdk.style.layers.PropertyValue<?>![] getMapboxRouteAlertSymbolLayerProperties();
+    method public com.mapbox.mapboxsdk.style.layers.PropertyValue<?>![] getMapboxTunnelNameLayerProperties();
+  }
+
+  public final class RouteAlertModelToll {
+    ctor public RouteAlertModelToll(com.mapbox.geojson.Point coordinate, String tollDescription);
+    method public com.mapbox.geojson.Point component1();
+    method public String component2();
+    method public com.mapbox.navigation.ui.routealert.RouteAlertModelToll copy(com.mapbox.geojson.Point coordinate, String tollDescription);
+    method public com.mapbox.geojson.Point getCoordinate();
+    method public String getTollDescription();
+  }
+
+  public final class RouteAlertOption {
+    field public static final com.mapbox.navigation.ui.routealert.RouteAlertOption! INSTANCE;
+    field public static final int ROUTE_ALERT_COUNTRY_BORDER_CROSSING = 1; // 0x1
+    field public static final int ROUTE_ALERT_RESTRICTED_AREA = 16; // 0x10
+    field public static final int ROUTE_ALERT_REST_STOP = 256; // 0x100
+    field public static final int ROUTE_ALERT_TOLL = 4096; // 0x1000
+    field public static final int ROUTE_ALERT_TUNNEL = 65536; // 0x10000
+  }
+
+  public final class RouteAlertToll {
+    ctor public RouteAlertToll(android.content.Context context, com.mapbox.mapboxsdk.maps.Style style, android.graphics.drawable.Drawable drawable, com.mapbox.mapboxsdk.style.layers.PropertyValue<?>... properties);
+    ctor public RouteAlertToll(android.content.Context context, com.mapbox.mapboxsdk.maps.Style style, android.graphics.drawable.Drawable drawable);
+    ctor public RouteAlertToll(android.content.Context context, com.mapbox.mapboxsdk.maps.Style style);
+    method public void onNewRouteAlerts(java.util.List<? extends com.mapbox.navigation.base.trip.model.alert.RouteAlert> routeAlerts);
+    method public void onNewRouteTollAlerts(java.util.List<com.mapbox.navigation.ui.routealert.RouteAlertModelToll> tollAlertModels);
+    field public static final com.mapbox.navigation.ui.routealert.RouteAlertToll.Companion! Companion;
+  }
+
+  public static final class RouteAlertToll.Companion {
+  }
+
+  public class Test {
+    ctor public Test();
+    method public static void main(String![]!);
+  }
+
+}
+
 package com.mapbox.navigation.ui.summary {
 
   public class SummaryBottomSheet extends android.widget.FrameLayout implements androidx.lifecycle.LifecycleObserver {
